@@ -3,11 +3,13 @@
 VOICES = [:ralph, :junior, :princess, :kathy, :bruce, :zarvox, :deranged, :fred]
 WORDS = ['hi', 'there', 'this', 'is', 'a', 'or', 'that', 'what', 'lol', 'banana', 'taco', 'flamingo', 'earphones', 'coffee', 'television', 'aliens', 'twerk', 'music', 'revolutionary', 'disco', 'tango', 'tea', 'peas', 'please', 'tickle', 'robot', 'activate']
 
-sentence = []
+words = []
 (Random.rand(10) + 1).times do
-  sentence << WORDS.sample
+  words << WORDS.sample
 end
 
 voice = VOICES.sample
+sentence = words.join(' ')
 
-system "say -v #{voice} #{sentence.join(' ')}"
+puts sentence
+system "say -v #{voice} #{sentence}"
